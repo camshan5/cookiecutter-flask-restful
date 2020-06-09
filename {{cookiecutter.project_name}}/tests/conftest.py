@@ -12,8 +12,7 @@ register(UserFactory)
 
 @pytest.fixture
 def app():
-    app = create_app(testing=True)
-    return app
+    return create_app(testing=True)
 
 
 @pytest.fixture
