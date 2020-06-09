@@ -60,7 +60,7 @@ def login():
 
     username = request.json.get("username", None)
     password = request.json.get("password", None)
-    if not username or not password:
+    if not (username and password):
         return jsonify({"msg": "Missing username or password"}), 400
 
     user = User.query.filter_by(username=username).first()
